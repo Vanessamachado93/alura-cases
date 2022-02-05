@@ -12,7 +12,21 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "yarn build && yarn start",
     "start": "next start",
     "lint": "next lint"
+  },
+  "devDependencies": {
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.3",
+    "prettier": "^2.5.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "prettier --write"
   }
 }
